@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 import { AuthService } from 'stub';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 
@@ -12,7 +14,8 @@ describe('AppComponent', () => {
                 NavbarComponent
             ],
             imports: [
-                RouterTestingModule
+                RouterTestingModule,
+                HttpClientTestingModule
             ],
             providers: [
                 AuthService

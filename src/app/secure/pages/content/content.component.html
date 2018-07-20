@@ -1,0 +1,14 @@
+<ul class="w3-ul w3-card-4 w3-twothird w3-display-topmiddle user-list">
+  <li class="w3-bar user-list-element" *ngFor="let user of users" (click)="openUserDetails(user)">
+    <span onclick="this.parentElement.style.display='none'"
+    class="w3-bar-item w3-button w3-xlarge w3-right">&times;</span>
+    <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198" class="w3-bar-item w3-circle" style="width:85px">
+    <div class="w3-bar-item">
+      <span class="w3-large">{{user.name}}</span><br>
+      <span>{{user.number}}</span>
+    </div>
+    <div class="w3-container" *ngIf="user.id === selectedUserId">
+      <router-outlet></router-outlet>
+    </div>
+  </li>
+</ul>

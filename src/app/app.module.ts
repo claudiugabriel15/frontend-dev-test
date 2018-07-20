@@ -9,10 +9,21 @@ import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 
+import { AuthModule } from './auth/auth.module';
+import { SecureModule } from './secure/secure.module';
+
 const routes: Routes = [
     {
         path: '',
         component: HomeComponent
+    },
+    {
+        path: 'auth',
+        loadChildren: './auth/auth.module#AuthModule',
+    },
+    {
+        path: 'secure',
+        loadChildren: './secure/secure.module#SecureModule',
     },
     {
         path: 'error/:status_code',
@@ -24,7 +35,6 @@ const routes: Routes = [
     }
 ];
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -35,7 +45,10 @@ const routes: Routes = [
     imports: [
         BrowserModule,
         RouterModule.forRoot(routes),
-        HttpStatusModule
+        HttpStatusModule,
+
+        AuthModule,
+        SecureModule,
     ],
     providers: [
         AuthService

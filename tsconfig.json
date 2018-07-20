@@ -20,6 +20,7 @@
       "src/main.ts",
       "src/polyfills.ts",
       "node_modules/stub",
-      "node_modules/common"
+      "node_modules/common",
+      "packages"
   ]
 }

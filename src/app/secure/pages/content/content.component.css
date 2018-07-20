@@ -1,0 +1,7 @@
+.user-list {
+  top: 150px;
+}
+
+.user-list-element {
+  cursor: pointer;
+}
